@@ -10,21 +10,36 @@
 			engine = query.substring(0, idx);
 			query = query.substring(idx + 1);
 			switch(engine){
-				case "g":
-					window.location = "https://google.com/search?q="+query;
-					break;
-				case "d":
-					window.location = "https://duckduckgo.com?q="+query;
-					break;
-				case "dl":
-					window.location = "https://duckduckgo.com/lite?q="+query;
-					break;
-				case "man":
-					window.location = "https://man.openbsd.org/"+query;
-					break;
-				case "crux":
+                case "a": //mozilla ff addons
+                    window.location = "https://addons.mozilla.org/en-US/firefox/search/?q="+query;
+                    break;
+				case "crux": //crux ports
 					window.location  = "https://crux.nu/portdb/?a=search&q="+query;
 					break;
+				case "d": //ddg
+					window.location = "https://duckduckgo.com?q="+query;
+					break;
+				case "dl": //ddg lite
+					window.location = "https://duckduckgo.com/lite?q="+query;
+					break;
+                case "disc": //discogs
+                    window.location = "https://www.discogs.com/search/?type=all&q="+query;
+                    break;
+				case "g": //google
+					window.location = "https://google.com/search?q="+query;
+					break;
+				case "man": //openBSD man
+					window.location = "https://man.openbsd.org/"+query;
+					break;
+                case "pin": //pinboard
+                    window.location = "https://pinboard.in/search/u:dlom?query="+query;
+                    break;
+                case "rym": //rateyourmusic
+                    window.location = "https://rateyourmusic.com/search?searchtype=l&searchterm="+query;
+                    break;
+                case "so": //stack overflow
+                    window.location = "https://stackoverflow.com/search?q="+query;
+                    break;
 				default:
 					alert("Invalid search");
 					break;
@@ -39,7 +54,7 @@
 		<input type="text" id="sbox" autofocus/>
 	</form>
 
-	<br><p>crux d dl g man</p>
+	<br><p>a crux d dl disc g man pin rym so</p>
 
 </body>
 
