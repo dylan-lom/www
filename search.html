@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>dumfaq</title>
+	<meta charset=UTF-8>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script>
+		function search(query){
+			let idx = query.indexOf(" ");
+			engine = query.substring(0, idx);
+			query = query.substring(idx + 1);
+			switch(engine){
+				case "g":
+					window.location = "https://google.com/search?q="+query;
+					break;
+				case "d":
+					window.location = "https://duckduckgo.com?q="+query;
+					break;
+				case "dl":
+					window.location = "https://duckduckgo.com/lite?q="+query;
+					break;
+				case "man":
+					window.location = "https://man.openbsd.org/"+query;
+					break;
+				case "crux":
+					window.location  = "https://crux.nu/portdb/?a=search&q="+query;
+					break;
+				default:
+					alert("Invalid search");
+					break;
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<h1>dumfaq</h1>
+	<form id="s" onsubmit="search(document.getElementById('sbox').value); return false;">
+		<input type="text" id="sbox" autofocus/>
+	</form>
+
+	<br><p>crux d dl g man</p>
+
+</body>
+
