@@ -7,7 +7,7 @@
     <script>
         function search(query){
             let idx = query.indexOf(" ");
-            engine = query.substring(0, idx);
+            engin = query.substring(0, idx);
             query = query.substring(idx + 1);
             switch(engine){
                 case "a": //mozilla ff addons
@@ -52,8 +52,8 @@
                 case "so": //stack overflow
                     window.location = "https://stackoverflow.com/search?q="+query;
                     break;
-                default:
-                    alert("Invalid search");
+                default: //otherwise, assume url
+                    window.location = engine+query;
                     break;
             }
         }
